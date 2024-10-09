@@ -1,0 +1,41 @@
+.choice{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 50px 0 50px;
+}
+
+.category{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.description{
+    margin-left: 100px;
+    margin-right: 90px;
+    font-size: 24px;
+    display: grid;
+    gap: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+}
+
+.places{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 0 100px 0 100px;
+    gap: 10px;
+}
+
+.place-list{
+    display: grid;
+    gap: 50px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+}
