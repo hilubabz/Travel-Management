@@ -24,7 +24,7 @@
         </div>
         <div class="nav-text">
             <div><a href="index.html">Home</a></div>
-            <div><a href="topattraction.html">Trip Planner</a></div>
+            <div><a href="topattraction.php">Trip Planner</a></div>
             <div>Booking</div>
             <div>Help</div>
             <div>About Us</div>
@@ -40,9 +40,9 @@
                 <option>Japan</option>
             </select>
         </div>
-        <div class="category"><a href="topattraction.html">Top Attractions</a></div>
-        <div class="category" style="background-color: black; color: white;"><a href="cultural.html" style="color: white;">Cultural & Historical</a></div>
-        <div class="category"><a href="bucketlist.html">Bucket List</a></div>
+        <div class="category"><a href="topattraction.php">Top Attractions</a></div>
+        <div class="category" style="background-color: black; color: white;"><a href="cultural.php" style="color: white;">Cultural & Historical</a></div>
+        <div class="category"><a href="bucketlist.php">Bucket List</a></div>
     </div>
 
     <div class="description">
@@ -58,7 +58,65 @@ of cultural exchange, fostering a deeper understanding and appreciation of diver
     </div>
 
     <div class="place-list">
+        <?php
+            include("database.php");
 
+            $query = "SELECT * FROM cultural LIMIT 5";
+            $result = mysqli_query($conn, $query);
+            
+            if ($result && mysqli_num_rows($result) > 0) {
+                $i = 1;
+                while ($row = mysqli_fetch_assoc($result)) {
+                   
+                    $placeImage = $row['placeImage'];
+                    $placeName = $row['placeName'];
+                    $locationName = $row['locationName'];
+                    $locationDescription = $row['locationDescription'];
+                    $duration=$row['duration'];
+                    $people=$row['people'];
+            echo "
+            <div class='places'>
+        <div>
+            <img src='Images/$placeImage' alt='' height='350px' width='100%'>
+        </div>
+        <div style='display: grid;'>
+            <div style='font-weight: bold;'>$i.</div>
+            <div style='display: flex; justify-content: space-between;'>
+                <div style='font-size: 2rem; font-weight: bold;'>$placeName</div>
+                <div style='display: flex; gap: 10px; border: 1px solid grey; align-items: center; padding: 5px; border-radius: 20px; width: 150px; justify-content: center; font-size: 1.5rem; color: grey; height:40px'>
+                    <i class='fa-regular fa-heart'></i>
+                    <p>SAVE</p>
+
+                </div>
+            </div>
+            <div style='display: flex; gap: 5px;'>
+                <i class='fa-regular fa-location-dot'></i>
+                <p style='font-weight: bold;'>$locationName</p>
+            </div>
+            <div style='font-size: 1.3rem;'>
+                $locationDescription
+            </div>
+            <div style='color: grey;'>
+                READ MORE
+                <i class='fa-solid fa-caret-down'></i>
+            </div>
+            <div style='font-weight: bold;'>Quick Facts</div>
+            <div style='display: flex; gap: 20px;'>
+                <div style='display: flex; gap: 5px; border: 1px solid black; align-items: center; padding: 10px; border-radius: 20px;'>
+                    <i class='fa-regular fa-timer'></i>
+                    <p>$duration</p>
+                </div>
+                <div style='display: flex; gap: 5px; border: 1px solid black; align-items: center; padding: 10px; border-radius: 20px;'>
+                    <i class='fa-regular fa-people-group'></i>
+                    <p>$people</p>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+            ";
+                $i++;}}
+        ?>
     </div>
 
     <div style="display: flex; align-items: center; justify-content: center">
@@ -88,6 +146,6 @@ Platforms
             <div>Terms of Use</div>
         </div>
     </div>
-    <script src="JS/cultural.js"></script>
+  
 </body>
 </html>

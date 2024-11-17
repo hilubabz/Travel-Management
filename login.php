@@ -1,3 +1,45 @@
+<?php
+include("database.php");
+
+if(isset($_POST['submit'])){
+    $name=$_POST['username'];
+    $pw=$_POST['password'];
+  
+  
+  
+  $sql="INSERT INTO login VALUES ( '$name', '$pw')";
+  
+  
+  $result=mysqli_query($conn,$sql);
+
+  if($result){
+    echo" Success";
+  }
+  else{
+    echo"Error";
+  }
+  
+ 
+  }
+
+// $sql1 = "select * from login";
+// if($row>0){
+//     while()
+// }
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,27 +56,26 @@
         <img src="Images/Logo.png" alt="" height="200px" width="270px">
     </div>
     <div align="center">
-        <form style="width: 1000px;">
+        <form action="login.php" method="POST" style="width: 1000px;">
             <fieldset>
                 <legend style="font-size: 1.5rem; font-weight: bold;">Welcome to Gaidim</legend>
                 <div align="left" style="width: 500px;">
-                    <big><b>Email Address</b></big><br>
-                    <input type="text" class="login-box">
+                    <big><b>Username</b></big><br>
+                    <input name='username' type="text" class="login-box">
                 </div><br><br><br>
                 <div align="left" style="width: 500px;">
                     <big><b>Password</b></big><br>
-                    <input type="text" class="login-box">
+                    <input name='password' type="text" class="login-box">
                 </div><br><br>
                 <div align="left" style="width: 500px;">
                     <p style="text-decoration: underline; font-weight: bold;">Forgot Password?</p>
 
                 </div><br>
-                <div style="width: 500px; display: flex; gap: 50px; font-size: 1.5rem;border: 1px solid black; padding: 10px; border-radius: 10px;">
-                    <i class="fa-brands fa-google"></i>
-                    <p>Continue With Google</p>
+                <div align="center">
+                    <input type="submit" name="submit" value="Sign in" style="padding: 10px 30px 10px 30px; background-color: black; color: white; font-size: 1.2rem;">
                 </div><br><br>
                 <div align="center">
-                    <input type="submit" value="Sign in" style="padding: 10px 30px 10px 30px; background-color: black; color: white; font-size: 1.2rem;">
+                    <input type="submit" name="submit" value="Dont have an account? Sign in" style="border: none; color: blue; background-color: white; cursor: pointer;">
                 </div><br><br>
             </fieldset>
         </form>
