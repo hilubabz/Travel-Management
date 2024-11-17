@@ -19,7 +19,7 @@
             <div class="nav-icon">
                 <i class="fa-regular fa-magnifying-glass" ></i>
                 <i class="fa-regular fa-bookmark" ></i>
-                <div class="hello"></div>
+                <a href='login.php'><div class="hello"></div></a>
             </div>
         </div>
         <div class="nav-text">

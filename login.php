@@ -53,7 +53,7 @@
                     <input type="submit" name="submit" value="Sign in" style="padding: 10px 30px 10px 30px; background-color: black; color: white; font-size: 1.2rem;">
                 </div><br><br>
                 <div align="center">
-                    <a href='signup.php'><p style="border: none; color: blue; background-color: white; cursor: pointer;">Dont have an account? Sign in</p></a>
+                    <a href='signup.php'><p style="border: none; color: blue; background-color: white; cursor: pointer;">Dont have an account? Sign up</p></a>
                 </div><br><br>
             </fieldset>
         </form>
