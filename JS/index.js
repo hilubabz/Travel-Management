@@ -11,7 +11,7 @@ for(let i=0;i<4;i++){
             <div align="center">
                 <img src="Images/${image[i]}" alt="" height="250px" width="450px">
             </div>
-            <div style="display: grid; gap: 5px; font-weight: 1000;">
+            <div style="display: grid; gap: 5px;">
                 <div align="center">${loc[i]}</div>
                 <div align="center">Duration: ${duration[i]}</div>
                 <div align="center">${price[i]}</div>
@@ -34,10 +34,16 @@ for(let i=0;i<3;i++){
             <div>
                 <img src="Images/${prefimg[i]}" alt="" height="300px" width="350px">
             </div>
-            <div style="font-size: 1.3rem; font-weight: 1000;" align="center">${preftext[i]}</div>
+            <div style="font-size: 1.3rem;" align="center">${preftext[i]}</div>
             </div>
     `
 }
 
 document.querySelector('.traveling').innerHTML=preferenceString;
 
+
+let imgClk=document.querySelector('.hello img');
+let logOut=document.querySelector('.logout');
+imgClk.addEventListener('click',function(){
+    logOut.style.display='flex';
+})

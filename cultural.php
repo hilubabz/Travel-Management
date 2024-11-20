@@ -1,35 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/cultural.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-</head>
+<?php
+    include "head.php";
+    ?>
 <body>
-    <div class="nav-bar">
-        <div class="nav">
-            <div>
-                <a href="index.html"><img src="Images/Logo.png" alt="" height="100px" width="150px"></a>
-            </div>
-            <div class="nav-icon">
-                <i class="fa-regular fa-magnifying-glass" ></i>
-                <i class="fa-regular fa-bookmark" ></i>
-                <a href='login.php'><div class="hello"></div></a>
-            </div>
-        </div>
-        <div class="nav-text">
-            <div><a href="index.html">Home</a></div>
-            <div><a href="topattraction.php">Trip Planner</a></div>
-            <div>Booking</div>
-            <div>Help</div>
-            <div>About Us</div>
-        </div>
-    </div>
+<?php
+    include "navbar.php";
+    ?>
     
     <div class="choice">
         <div class="category">
@@ -123,29 +98,9 @@ of cultural exchange, fostering a deeper understanding and appreciation of diver
         <div style="background-color: black;color: white;font-weight: bold; padding: 15px; border-radius: 10px; font-size: 1.3rem;margin-bottom: 30px;">SEE MORE</div>
     </div>
 
-    <div class="footer">
-        <div style="display: grid; gap: 10px;">
-            <p>Ready To Travel</p>
-            <pre>Follow Us On Other
-Platforms
-            </pre>
-            <div style="display: flex; justify-content: space-between;">
-                <i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i>
-                <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
-                <i class="fa-brands fa-twitter" style="color: #ffffff;"></i>
-                <i class="fa-brands fa-pinterest-p" style="color: #ffffff;"></i>
-            </div>
-        </div>
-        <div>
-            <img src="Images/Logo.png" alt="" height="150px" width="200px">
-        </div>
-        <div style="display: grid; gap: 20px;">
-            <div>About Us</div>
-            <div>Contact Us</div>
-            <div>Review</div>
-            <div>Terms of Use</div>
-        </div>
-    </div>
-  
+    <?php
+    include "footer.php";
+    include "logoutjs.php";
+    ?>
 </body>
 </html>
