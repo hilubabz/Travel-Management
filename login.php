@@ -29,6 +29,7 @@ if (isset($_POST['submit'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +37,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div style="display: flex; justify-content: center;">
         <img src="Images/Logo.png" alt="Logo" height="200px" width="270px">
@@ -53,13 +55,16 @@ if (isset($_POST['submit'])) {
                     <input name="password" type="password" class="login-box" required>
                 </div><br><br>
                 <div align="left" style="width: 500px;">
-                    <p style="text-decoration: underline; font-weight: bold;">Forgot Password?</p>
+                    <a href="sendOTP.php" style="text-decoration: underline; font-weight: bold;">Forgot Password?</a>
                 </div><br>
                 <div align="center">
-                    <button type="submit" name="submit" class="btn btn-primary" style="padding: 10px 30px; background-color: black; color: white; font-size: 1.2rem;">Submit</button>
+                    <button type="submit" name="submit" class="btn btn-primary"
+                        style="padding: 10px 30px; background-color: black; color: white; font-size: 1.2rem;">Submit</button>
                 </div><br><br>
                 <div align="center">
-                    <a href="signup.php"><p style="color: blue; cursor: pointer;">Don't have an account? Sign up</p></a>
+                    <a href="signup.php">
+                        <p style="color: blue; cursor: pointer;">Don't have an account? Sign up</p>
+                    </a>
                 </div><br><br>
             </fieldset>
         </form>
@@ -85,18 +90,19 @@ if (isset($_POST['submit'])) {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <?php if ($openModal): ?>
-    <script>
-        // Show the modal
-        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-        myModal.show();
+        <script>
+            // Show the modal
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            myModal.show();
 
-        // Redirect after 2 seconds if login was successful
-        <?php if ($isSuccess): ?>
-        setTimeout(function() {
-            window.location.href = "index.php";
-        }, 2000);
-        <?php endif; ?>
-    </script>
+            // Redirect after 2 seconds if login was successful
+            <?php if ($isSuccess): ?>
+                setTimeout(function () {
+                    window.location.href = "index.php";
+                }, 2000);
+            <?php endif; ?>
+        </script>
     <?php endif; ?>
 </body>
+
 </html>

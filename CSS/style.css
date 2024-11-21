@@ -122,3 +122,12 @@ a{
     color: white;
     transition: all 0.5s;
 }
+
+option,select{
+    width: 100%;
+}
+
+.saveGaryo{
+    background-color: black;
+    color: white;
+}

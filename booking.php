@@ -1,11 +1,12 @@
 <?php
-    include "head.php";
-    ?>
+include "head.php";
+?>
+
 <body>
-<?php
+    <?php
     include "navbar.php";
     ?>
-    
+
     <div class="choice">
         <div class="category">
             <select style="border: none;font-size: 1.5rem;">
@@ -19,13 +20,14 @@
         <div class="category">Check Out Date</div>
         <div class="category">Number of Guests</div>
     </div>
-    
+
     <div class="description" style="display:flex;gap:50px;justify-content:space-between">
         <div style="padding-top: 50px; font-size: 2rem; font-weight: bold;">
-        Find the best hotels at your required destination as per your preference
+            Find the best hotels at your required destination as per your preference
         </div>
-        <div style='margin-top: 50px; display:flex;gap:5px;border:1px black solid;padding:10px;border-radius:10px;align-items:center;'>
-        <i class="fa-solid fa-filter"></i>
+        <div
+            style='margin-top: 50px; display:flex;gap:5px;border:1px black solid;padding:10px;border-radius:10px;align-items:center;'>
+            <i class="fa-solid fa-filter"></i>
             <div>Filter</div>
         </div>
     </div>
@@ -36,19 +38,19 @@
 
         $query = "SELECT * FROM booking LIMIT 5";
         $result = mysqli_query($conn, $query);
-        
+
         if ($result && mysqli_num_rows($result) > 0) {
             $i = 1;
             while ($row = mysqli_fetch_assoc($result)) {
-               
+
                 $placeImage = $row['placeImage'];
                 $name = $row['name'];
                 $location = $row['location'];
                 $star = $row['star'];
-                $photo=$row['photo'];
-                $user=$row['user'];
-                $review=$row['review'];
-            echo "
+                $photo = $row['photo'];
+                $user = $row['user'];
+                $review = $row['review'];
+                echo "
                 <div class='places'>
         <div>
             <img src='Images/$placeImage' alt='' height='350px' width='100%'>
@@ -67,13 +69,13 @@
                 <p style='font-weight: bold;'>$location</p>
             </div>
             <div style='display:flex;gap:5px'>";
-            for($j=0;$j<$star;$j++){
-                echo
-                "
+                for ($j = 0; $j < $star; $j++) {
+                    echo
+                        "
                     <i class='fa-solid fa-star' style='color: #FFD43B;'></i>
                 ";
-            }
-            echo"
+                }
+                echo "
             </div>
             <div style='display:grid;gap:10px;border:1px grey solid;padding:0 2px 0 2px; border-radius:10px;'>
                 <div style='display:flex;align-items:center;gap:10px;padding-left:5px'>
@@ -86,20 +88,25 @@
         </div>
     </div>
             ";
-            $i++;}}
+                $i++;
+            }
+        }
         ?>
     </div>
 
     <div style="display: flex; align-items: center; justify-content: center">
-        <div style="background-color: black;color: white;font-weight: bold; padding: 15px; border-radius: 10px; font-size: 1.3rem;margin-bottom: 30px;">SEE MORE</div>
+        <div
+            style="background-color: black;color: white;font-weight: bold; padding: 15px; border-radius: 10px; font-size: 1.3rem;margin-bottom: 30px;">
+            SEE MORE</div>
     </div>
 
     <?php
     include "footer.php";
     include "logoutjs.php";
     ?>
-    
+
 </body>
+
 </html>
 
 <!-- vzlo mkjm qhdy fkgl -->

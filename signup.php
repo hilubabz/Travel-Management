@@ -52,12 +52,14 @@ if (isset($_POST['submit'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
     <div style="display: flex; justify-content: center;">
         <img src="Images/Logo.png" alt="Logo" height="200px" width="270px">
@@ -79,10 +81,12 @@ if (isset($_POST['submit'])) {
                     <input type="file" name="photo" accept="image/*" required>
                 </div><br><br>
                 <div align="center">
-                    <input type="submit" name="submit" value="Sign up" style="padding: 10px 30px; background-color: black; color: white; font-size: 1.2rem;">
+                    <input type="submit" name="submit" value="Sign up"
+                        style="padding: 10px 30px; background-color: black; color: white; font-size: 1.2rem;">
                 </div><br><br>
             </fieldset>
         </form>
     </div>
 </body>
+
 </html>
