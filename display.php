@@ -10,8 +10,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         $locationName = $row['locationName'];
         $locationDescription = $row['locationDescription'];
         $duration = $row['duration'];
-        $people = $row['peo
-        ple'];
+        $people = $row['people'];
         if (isset($_SESSION['username'])) {
             $username = $_SESSION['username'];
             $seql = "select * from favourites where username='$username'";
