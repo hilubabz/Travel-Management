@@ -18,7 +18,7 @@
                 echo "
                     <div style='position: relative'>
                     <div class='hello'>
-                    <img src='" . $_SESSION['photo'] . "'>
+                    <img src='" . $_SESSION['photo'] . "' style='object-fit:cover;'>
                     </div>
                     <div class='logout'>
                     <a href='logout.php' >Log Out</a>

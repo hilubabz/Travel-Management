@@ -35,6 +35,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 <form method='POST' action='favfunc.php'>
                 <input type='hidden' name='tableId$i' value='$i'>
                 <input type='hidden' name='tableName' value='$tableName'>";
+                if(isset($_SESSION["username"])) {
         if ($flag == 0) {
             echo "
                 <button class='save' style='display: flex; gap: 10px; border: 1px solid grey; align-items: center; padding: 5px; border-radius: 20px; width: 150px; justify-content: center; font-size: 1.5rem; color: grey; height:40px;' type='submit'  name='submit$i'>
@@ -48,6 +49,14 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <i class='fa-regular fa-heart'></i>
                         SAVED
     
+                    </button>";
+        }}
+        else{
+            echo "
+                    <button class='save' style='display: flex; gap: 10px; border: 1px solid grey; align-items: center; padding: 5px; border-radius: 20px; width: 150px; justify-content: center; font-size: 1.5rem; height:40px;'><a href='favourites.php'>
+                        <i class='fa-regular fa-heart'></i>
+                        SAVE
+                    </a>
                     </button>";
         }
         echo "

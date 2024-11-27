@@ -17,6 +17,7 @@ if (isset($_POST['submit'])) {
         $result2 = mysqli_fetch_assoc($result1);
         $_SESSION['username'] = $result2['username'];
         $_SESSION['photo'] = $result2['photo'];
+        $_SESSION['email']=$result2['email'];
         $message = "Login successful! Redirecting...";
         $isSuccess = true; // Set success flag
         $openModal = true; // Show modal

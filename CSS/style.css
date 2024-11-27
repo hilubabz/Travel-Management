@@ -131,3 +131,10 @@ option,select{
     background-color: black;
     color: white;
 }
+
+
+.abouttala{
+    display: flex;
+    font-size: 1.2rem;
+    gap: 10px;
+}

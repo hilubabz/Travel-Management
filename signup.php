@@ -4,6 +4,7 @@ include("database.php");
 if (isset($_POST['submit'])) {
     $name = $_POST['username'];
     $pw = $_POST['password'];
+    $email = $_POST['email'];
     $file_name = $_FILES['photo']['name'];
     $tempname = $_FILES['photo']['tmp_name'];
     $folder = 'Images/' . basename($file_name);
@@ -26,9 +27,9 @@ if (isset($_POST['submit'])) {
             // Hash the password
 
             // Insert user into the database
-            $sql2 = "INSERT INTO login (username, password, photo) VALUES (?, ?, ?)";
+            $sql2 = "INSERT INTO login (username, password, photo,email) VALUES (?, ?, ?,?)";
             $stmt2 = $conn->prepare($sql2);
-            $stmt2->bind_param("sss", $name, $pw, $folder);
+            $stmt2->bind_param("ssss", $name, $pw, $folder,$email);
 
             // Move file and execute query
             if (move_uploaded_file($tempname, $folder)) {
@@ -75,6 +76,10 @@ if (isset($_POST['submit'])) {
                 <div align="left" style="width: 500px;">
                     <big><b>Password</b></big><br>
                     <input name="password" type="password" class="login-box" required>
+                </div><br><br>
+                <div align="left" style="width: 500px;">
+                    <big><b>Email</b></big><br>
+                    <input name="email" type="email" class="login-box" required>
                 </div><br><br>
                 <div align="left" style="width: 500px;">
                     <big><b>Profile Picture</b></big><br>
