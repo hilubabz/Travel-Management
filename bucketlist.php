@@ -47,18 +47,13 @@ include "head.php";
         include("database.php");
         // include "favfunc.php";
         
-        $query = "SELECT * FROM bucketlist LIMIT 5";
+        $query = "SELECT * FROM bucketlist where tableName = 'bucketlist'";
+
         $result = mysqli_query($conn, $query);
         $tableName = 'bucketlist';
         $i = 1;
         include "display.php";
         ?>
-    </div>
-
-    <div style="display: flex; align-items: center; justify-content: center">
-        <div
-            style="background-color: black;color: white;font-weight: bold; padding: 15px; border-radius: 10px; font-size: 1.3rem;margin-bottom: 30px;">
-            SEE MORE</div>
     </div>
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap-select-country@4.2.0/dist/js/bootstrap-select-country.min.js"></script>

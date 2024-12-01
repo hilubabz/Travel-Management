@@ -3,6 +3,7 @@
 if ($result && mysqli_num_rows($result) > 0) {
     // $i = 1;
 
+
     while ($row = mysqli_fetch_assoc($result)) {
         $id = $row['id'];
         $placeImage = $row['placeImage'];
@@ -11,83 +12,56 @@ if ($result && mysqli_num_rows($result) > 0) {
         $locationDescription = $row['locationDescription'];
         $duration = $row['duration'];
         $people = $row['people'];
+        $class = "";
+        $saveText = "SAVE";
         if (isset($_SESSION['username'])) {
             $username = $_SESSION['username'];
-            $seql = "select * from favourites where username='$username'";
-            $output = mysqli_query($conn, $seql);
-            while ($data = mysqli_fetch_assoc($output)) {
-                $tableKoNaam = $data['tableName'];
-                $tableKoId = $data['tableId'];
-                $sql = "update $tableKoNaam set flag=1 where id=$tableKoId";
-                mysqli_query($conn, $sql);
+            $sql = "select * from favourites where username='$username'and tableId = $id";
+            $output = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($output) > 0) {
+                $class = "saved";
+                $saveText = "SAVED";
+
             }
+
         }
         $flag = $row['flag'];
         echo "
-                <div class='places'>
-        <div>
-            <img src='Images/$placeImage' alt='' height='350px' width='100%'>
-        </div>
-        <div style='display: grid;'>
-            <div style='font-weight: bold;'>$i.</div>
-            <div style='display: flex; justify-content: space-between;'>
-                <div style='font-size: 2rem; font-weight: bold;'>$placeName</div>
-                <form method='POST' action='favfunc.php'>
-                <input type='hidden' name='tableId$i' value='$i'>
-                <input type='hidden' name='tableName' value='$tableName'>";
-                if(isset($_SESSION["username"])) {
-        if ($flag == 0) {
-            echo "
-                <button class='save' style='display: flex; gap: 10px; border: 1px solid grey; align-items: center; padding: 5px; border-radius: 20px; width: 150px; justify-content: center; font-size: 1.5rem; color: grey; height:40px;' type='submit'  name='submit$i'>
-                    <i class='fa-regular fa-heart'></i>
-                    SAVE
-
-                </button>";
-        } else {
-            echo "
-                    <button class='save' style='display: flex; gap: 10px; border: 1px solid grey; align-items: center; padding: 5px; border-radius: 20px; width: 150px; justify-content: center; font-size: 1.5rem; color: white;background-color:black; height:40px;' type='submit'  name='submit$i'>
-                        <i class='fa-regular fa-heart'></i>
-                        SAVED
-    
-                    </button>";
-        }}
-        else{
-            echo "
-                    <button class='save' style='display: flex; gap: 10px; border: 1px solid grey; align-items: center; padding: 5px; border-radius: 20px; width: 150px; justify-content: center; font-size: 1.5rem; height:40px;'><a href='favourites.php'>
-                        <i class='fa-regular fa-heart'></i>
-                        SAVE
-                    </a>
-                    </button>";
-        }
-        echo "
-                <form>
-
-            </div>
-            <div style='display: flex; gap: 5px;'>
-                <i class='fa-regular fa-location-dot'></i>
-                <p style='font-weight: bold;'>$locationName</p>
-            </div>
-            <div style='font-size: 1.3rem;'>
-                $locationDescription
-            </div>
-            <div style='color: grey;'>
-                READ MORE
-                <i class='fa-solid fa-caret-down'></i>
-            </div>
-            <div style='font-weight: bold;'>Quick Facts</div>
-            <div style='display: flex; gap: 20px;'>
-                <div style='display: flex; gap: 5px; border: 1px solid black; align-items: center; padding: 10px; border-radius: 20px;'>
-                    <i class='fa-regular fa-timer'></i>
-                    <p>$duration</p>
-                </div>
-                <div style='display: flex; gap: 5px; border: 1px solid black; align-items: center; padding: 10px; border-radius: 20px;'>
-                    <i class='fa-regular fa-people-group'></i>
-                    <p>$people</p>
-                </div>
-            </div>
-        </div>
-    </div>
-            ";
+        <div class='places'>
+   <div class='place-img-container'>
+      <img src='Images/$placeImage' alt='' height='350px' width='100%'>
+   </div>
+   <div style='display: grid; gap: 0.5rem;'>
+      <div style='font-weight: bold;'>$i.</div>
+      <div style='display: flex; justify-content: space-between;'>
+         <a href='place.php?id=$id'>
+            <div style='font-size: 1.4rem !important; font-weight: bold;'>$placeName</div>
+         </a>
+         <a href='favfunc.php?id=$id' class='save-btn $class'><i class='fa-regular fa-heart'></i>$saveText</a>
+      </div>
+      <div style='display: flex; gap: 5px; align-items: center;'>
+         <i class='fa-regular fa-location-dot'></i>
+         <p style='font-weight: bold;'>$locationName</p>
+      </div>
+      <p style='font-size: 1.3rem;' class='location-description'>
+         $locationDescription
+      </p>
+      <div style='color: grey;'>
+         READ MORE
+         <i class='fa-solid fa-caret-down'></i>
+      </div>
+      <div style='display: flex; gap: 20px;'>
+         <div style='display: flex; gap: 5px; align-items: center;padding: 0.1rem 0.5rem; font-size: 0.9rem !important;   color: #858585;'>
+            <i class='fa-regular fa-timer'></i>
+            <p style='font-size: 0.9rem !important'>$duration</p>
+         </div>
+         <div style='display: flex; gap: 5px; align-items: center;padding: 0.1rem 0.5rem; font-size: 0.9rem !important;   color: #858585;'>
+            <i class='fa-regular fa-timer'></i>
+            <p style='font-size: 0.9rem !important'>$people</p>
+         </div>
+      </div>
+   </div>
+</div>";
         $i++;
     }
 

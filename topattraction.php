@@ -41,7 +41,7 @@ include "head.php";
         <?php
         include("database.php");
 
-        $query = "SELECT * FROM topattraction LIMIT 5";
+        $query = "SELECT * FROM bucketlist where tableName = 'topattraction'";
         $result = mysqli_query($conn, $query);
         $tableName = 'topattraction';
         $i = 1;
@@ -56,11 +56,6 @@ include "head.php";
             alert("hello")
         }
     </script>
-    <div style="display: flex; align-items: center; justify-content: center">
-        <div
-            style="background-color: black;color: white;font-weight: bold; padding: 15px; border-radius: 10px; font-size: 1.3rem;margin-bottom: 30px;">
-            SEE MORE</div>
-    </div>
 
     <?php
     include "footer.php";

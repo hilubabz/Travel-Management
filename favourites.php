@@ -11,10 +11,9 @@ if (isset($_SESSION['username'])) {
     $i = 1;
     while ($rows = mysqli_fetch_assoc($results)) {
 
-        $tableName = $rows['tableName'];
         $tableId = $rows['tableId'];
 
-        $sql = "select * from $tableName where id=$tableId";
+        $sql = "select * from bucketlist where id=$tableId";
         $result = mysqli_query($conn, $sql);
 
         include "display.php";
@@ -23,7 +22,7 @@ if (isset($_SESSION['username'])) {
     echo "</div>";
 } else {
     echo "
-        <div style='display:flex;justify-content:center;font-size:2rem;font-weight:bold;'>Login to see your favourites</div>
+        <div style='display:flex;justify-content:center;font-size:2rem;font-weight:bold;min-height: 41vh;'>Login to see your favourites</div>
     ";
 }
 include "footer.php";

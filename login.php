@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
                 <legend style="font-size: 1.5rem; font-weight: bold;">Welcome to Gaidim</legend>
                 <div align="left" style="width: 500px;">
                     <big><b>Username</b></big><br>
-                    <input name="username" type="text" class="login-box" required>
+                    <input name="username" type="text" class="login-box" required autocomplete="off">
                 </div><br><br><br>
                 <div align="left" style="width: 500px;">
                     <big><b>Password</b></big><br>

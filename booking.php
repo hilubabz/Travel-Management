@@ -22,7 +22,7 @@ include "head.php";
     </div>
 
     <div class="description" style="display:flex;gap:50px;justify-content:space-between">
-        <div style="padding-top: 50px; font-size: 2rem; font-weight: bold;">
+        <div style="padding-top: 50px; font-size: 1.4rem; font-weight: bold;">
             Find the best hotels at your required destination as per your preference
         </div>
         <div
@@ -52,14 +52,14 @@ include "head.php";
                 $review = $row['review'];
                 echo "
                 <div class='places'>
-        <div>
+        <div class='place-img-container'>
             <img src='Images/$placeImage' alt='' height='350px' width='100%'>
         </div>
         <div style='display: grid;'>
             <div style='font-weight: bold;'>$i.</div>
             <div style='display: flex; justify-content: space-between;'>
-                <div style='font-size: 2rem; font-weight: bold;'>$name</div>
-                <div style='display: flex; gap: 10px; border: 1px solid grey; align-items: center; padding: 5px; border-radius: 20px; width: 150px; justify-content: center; font-size: 1.5rem; color: white;background-color:black; height:40px'>
+                <div style='font-size: 1.5rem; font-weight: bold;'>$name</div>
+                <div style='display: flex; gap: 10px; border: 1px solid grey; align-items: center; padding: 5px; border-radius: 20px; width: 100px; justify-content: center; font-size: 1rem; color: white;background-color:black; height:40px'>
                     Show Prices
 
                 </div>
@@ -81,7 +81,7 @@ include "head.php";
                 <div style='display:flex;align-items:center;gap:10px;padding-left:5px'>
                     <div class='hello'>
                     </div>
-                    <div style='font-weight:bold;font-size:1.2rem'>$user</div>
+                    <div style='font-weight:bold;font-size:1rem'>$user</div>
                 </div>
                 <div>$review</div>
             </div>
@@ -92,12 +92,6 @@ include "head.php";
             }
         }
         ?>
-    </div>
-
-    <div style="display: flex; align-items: center; justify-content: center">
-        <div
-            style="background-color: black;color: white;font-weight: bold; padding: 15px; border-radius: 10px; font-size: 1.3rem;margin-bottom: 30px;">
-            SEE MORE</div>
     </div>
 
     <?php

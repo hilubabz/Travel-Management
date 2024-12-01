@@ -1,140 +1,198 @@
-*{
-    margin: 0;
-    padding: 0;
-
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
 }
 
-body{
-    font-family: Poppins;
-}
-.nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px 50px 50px;
+::-webkit-scrollbar {
+  width: 0.7rem;
+  background-color: #d8d8d8;
 }
 
-.nav-icon{
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 30px;
+::-webkit-scrollbar-thumb {
+  width: 1rem;
+  background-color: black;
+  border-radius: 1rem;
 }
 
-.hello{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: grey;
-    overflow: hidden;
-    img{
-        height: 100%;
-        width: 100%;
-    
-    }
+body {
+  font-family: Poppins;
+  min-height: 100vh;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px 50px 50px;
 }
 
-.nav-text{
-    display: flex;
-    
-    gap: 70px;
-    
+.nav-icon {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
-.top-picks{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding:0 200px 0 200px;
-}
-
-.location{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-}
-
-.preferences{
-    display: flex;
-    width: 75%;
-    margin-left: 150px;
-}
-
-.preferences-text{
-    border: 1px solid black;
-    padding: 20px 150px 20px 150px;
-}
-
-.preferences-text1{
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-.preferences-text2{
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.traveling{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 200px 50px 200px;
-}
-
-.footer{
-    background-color: black;
-    color: white;
-    padding: 50px 150px 50px 150px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-a{
-    text-decoration: none;
-    color: black;
-}
-
-
-
-.login-box{
-    height: 50px;
-    width: 500px;
-    font-size: 1.2rem;
-}
-
-
-.logout{
-    position: absolute; font-size:1.2rem; width:5rem;display:none;
-}
-
-.login{
-    border: 1px black solid;
-    font-size: 1.2rem;
-    padding: 10px;
-    width: 100px;
-    border-radius: 10px;
-}
-
-.login:hover{
-    background-color: black;
-    color: white;
-    transition: all 0.5s;
-}
-
-option,select{
+.hello {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: grey;
+  overflow: hidden;
+  img {
+    height: 100%;
     width: 100%;
+  }
 }
 
-.saveGaryo{
-    background-color: black;
-    color: white;
+.nav-text {
+  display: flex;
+
+  gap: 70px;
 }
 
-
-.abouttala{
-    display: flex;
-    font-size: 1.2rem;
-    gap: 10px;
+.top-picks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 0 200px 0 200px;
 }
+
+.location {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.preferences {
+  display: flex;
+  width: 75%;
+  margin-left: 150px;
+}
+
+.preferences-text {
+  border: 1px solid black;
+  padding: 20px 150px 20px 150px;
+}
+
+.preferences-text1 {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.preferences-text2 {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.traveling {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 200px 50px 200px;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 50px 150px 50px 150px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.login-box {
+  height: 50px;
+  width: 500px;
+  font-size: 1.2rem;
+}
+
+.logout {
+  position: absolute;
+  font-size: 1.2rem;
+  width: 5rem;
+  display: none;
+}
+
+.login {
+  border: 1px black solid;
+  font-size: 1rem;
+  padding: 10px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.login:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.5s;
+}
+
+option,
+select {
+  width: 100%;
+}
+
+.saveGaryo {
+  background-color: black;
+  color: white;
+}
+
+.abouttala {
+  display: flex;
+  font-size: 1.2rem;
+  gap: 10px;
+}
+
+/* save btn */
+
+.save-btn {
+  text-decoration: none;
+  padding: 0rem 1rem;
+  border: 1px solid #d8d8d8;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border-radius: 1rem;
+}
+
+.saved {
+  background-color: black;
+  color: white;
+}
+
+.location-description {
+  display: -webkit-box; /* Enables the box model */
+  -webkit-box-orient: vertical; /* Specifies vertical orientation */
+  overflow: hidden; /* Ensures content outside is hidden */
+  text-overflow: ellipsis; /* Adds "..." at the end */
+  line-clamp: 3; /* For modern browser fallback */
+  -webkit-line-clamp: 3; /* Limits to 3 lines */
+  height: max-content;
+  font-size: 1rem !important;
+  width: 100%;
+}
+
+.place-img-container {
+  overflow: hidden;
+}
+
+.box-not-selected {
+  padding: 20px 10px 10px 10px;
+  font-size: 1.2rem;
+  display: grid;
+  gap: 10px;
+  border: 1.5px rgb(164, 164, 164) solid;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.box-not-selected:has(input[type ="radio"]:checked){
+    border: 1.5px rgb(0, 0, 0) solid;
+}
+

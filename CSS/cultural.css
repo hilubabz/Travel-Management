@@ -5,7 +5,7 @@
 }
 
 .category{
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,15 +28,30 @@
 
 .places{
     display: grid;
-    grid-template-columns: 30% 70%;
-    padding: 0 100px 0 100px;
-    gap: 10px;
+    grid-template-columns: 0.3fr 1fr;
+    gap: 1.2rem;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+
+    &:hover{
+        background-color: #c8c8c8;
+
+        img{
+            scale: 1.1;
+            transition: all 0.3s ease-in-out;
+
+        }
+    }
+    img{
+        object-fit: cover;
+    }
 }
 
 .place-list{
     display: grid;
     gap: 50px;
-    padding-bottom: 50px;
-    padding-top: 20px;
+    padding: 2rem 6rem;
 }
 

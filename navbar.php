@@ -6,7 +6,7 @@
         <div class="nav-text">
             <div><a href="index.php">Home</a></div>
             <div><a href="topattraction.php">Trip Planner</a></div>
-            <div>Booking</div>
+            <div><a href="booking.php">Booking</a></div>
             <div>Help</div>
             <div>About Us</div>
         </div>
@@ -21,7 +21,7 @@
                     <img src='" . $_SESSION['photo'] . "' style='object-fit:cover;'>
                     </div>
                     <div class='logout'>
-                    <a href='logout.php' >Log Out</a>
+                    <a href='logout.php'>Log Out</a>
                     </div>
                     </div>
                     ";
